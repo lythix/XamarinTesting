@@ -1,4 +1,5 @@
 ﻿using System;
+using Demo;
 using NUnit.Framework;
 
 
@@ -39,6 +40,23 @@ namespace UnitTestApp
         public void Inconclusive()
         {
             Assert.Inconclusive("Inconclusive");
+        }
+
+        /// <summary>
+        /// To run code in Demo project, need to add Xamarin Forms Nuget package
+        /// </summary>
+        [Test]
+        public void Service_Add_ReturnsSum()
+        {
+            // Arrange
+            var service = new Service();
+            var expectedResult = 5;
+
+            // Act
+            var result = service.Add(2, 3);
+            
+            // Assert
+            Assert.AreEqual(expectedResult, result);
         }
     }
 }
